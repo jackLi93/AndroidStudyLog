@@ -179,3 +179,4 @@ public File getAlbumStorageDir(Context context, String albumName) {
 	mContext.deleteFile(fileName);
 -  当存在内部存储和私有的外部存储时，当应用被卸载的时候，数据会被自动删除。
 -  另外应该手动删除使用getCacheDir()的所有的缓存文件和定期删除其他不需要的文件。
+
