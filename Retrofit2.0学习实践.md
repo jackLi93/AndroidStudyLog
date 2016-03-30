@@ -72,6 +72,7 @@ Call<List<Repo>> repos = service.listRepos("octocat");
 <code>
 compile 'com.squareup.retrofit2:retrofit:2.0.0' //注意获取最新版本
 </code>
+
 </pre>
 
 ---
