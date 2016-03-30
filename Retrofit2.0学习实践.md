@@ -15,7 +15,7 @@
 2.  Retrofit会自动生成API接口的实现类。
 3.  每一个请求既可以是同步请求远程服务端也可以是异步请求远程服务端。
 4.  广泛使用注解来完成Http请求，简化代码。如：@GET，@POST,@PUT,@HEADER等等。
-5.  Retrofit2.0不在内置解析器，但是允许你添加解析器的插件然后给Retrofit使用。比如：Gason,Jackson,Moshi,Protobuf等。还可以自定义数据解析方法。这样一来使得Retrofit的灵活性大大增加。
+5.  Retrofit2.0不再内置解析器，但是允许你添加解析器的插件然后给Retrofit使用。比如：Gason,Jackson,Moshi,Protobuf等。还可以自定义数据解析方法。这样一来使得Retrofit的灵活性大大增加。
  
   //But in Retrofit 2.0, Converter is not included in the package anymore. You need to plug a Converter in yourself or Retrofit will be able to accept only the String result. As a result, Retrofit 2.0 doesn't depend on Gson anymore.
  
@@ -56,11 +56,9 @@ GitHubService service = retrofit.create(GitHubService.class);
 -  retrofit.create()方法直接生成接口的实现类。
 
 3.调用请求，可同步方式也可以异步方式：
-<pre>
-<code>
+
 Call<List<Repo>> repos = service.listRepos("octocat");
-</code>
-</pre>
+
 
 **代码解释：**
 
