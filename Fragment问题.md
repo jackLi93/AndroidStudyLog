@@ -4,7 +4,7 @@
 解决办法：
 
 
-通过大量查询资料发现应该调用getChildFragmentManager(),但是在程序中无法调用getChildFragmentManager()，应该是v4包版本的问题。
+通过大量查询资料发现应该调用getChildFragmentManager(),但是在程序中无法调用getChildFragmentManager()，应该是v4包版本的问题。//后来发现，此推理有误，因为并未使用Fragment的嵌套，所以调用不到getChildFragmentManager()。
 
 -  [Fragment is blank the second time it is viewed](http://stackoverflow.com/questions/7746652/fragment-is-blank-the-second-time-it-is-viewed)
 -  [getSupportFragmentManager()和getChildFragmentManager()](http://android.jobbole.com/82416/)
@@ -48,3 +48,51 @@
 但是，我在MainActivity代码中只有这个方法：getSupportFragmentManager()，而没有getChildFragmentManager()，真是奔溃。
 
 于是，继续从头开始捋思路，又遇见神奇的事情，将Fragment的布局用RelativeLayout作为父布局就能显示而用LinearLayout就不能显示。。。。。什么鬼！！！
+
+This is because by using old android.support.v4.
+
+once you change the latest library.it will solved I solved it by change it. Hope it will work
+
+And i think your are trying to use it for android API level less than 17 and the method getChildFragmentManager() is only for API 17 and higher.
+
+[getChildFragmentManager() method is undefined](http://stackoverflow.com/questions/19431839/getchildfragmentmanager-method-is-undefined?rq=1)
+
+**最终解决方案：**
+
+看官方的文档，重新写了一下代码，莫名其妙就又都显示了。。。。这个问题真是莫名其妙。。。。
+
+**代码如下：**
+<pre>
+<code>
+package com.sansi.smarthome.fragment;
+
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import com.sansi.smarthome.R;
+
+/**
+ * Created by jack on 2016/4/7.
+ */
+public class FragmentTwo extends Fragment {
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        super.onCreateView(inflater, container, savedInstanceState);
+        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_two,container,false);
+
+        return rootView;
+    }
+}
+
+</code>
+</pre>
+
+**V1.0.0 结论：**
+
+-  Fragment的使用应该导入V4下的包，嵌套的Fragment需要使用getChildFragmentManager()。
+-  Fragment莫名其妙的不显示或者少显示内容真奇怪，必要时重新写一遍MyFragment.calss;
