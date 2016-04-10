@@ -96,3 +96,8 @@ public class FragmentTwo extends Fragment {
 
 -  Fragment的使用应该导入V4下的包，嵌套的Fragment需要使用getChildFragmentManager()。
 -  Fragment莫名其妙的不显示或者少显示内容真奇怪，必要时重新写一遍MyFragment.calss;
+
+**V1.0.1:**
+
+-  当我重新创建了一个应用，居然才有Viewager +TabLagyout:外面嵌套的是DrawLayout出现所有Fragment都不显示，各种重写修改代码仍不能解决问题，通过log打印信息，发现刚开始会调用Fragment的onCreateView方法，而后就连onCreateView都不调用了。然后我想到是不是因为view的嵌套层次太深，Android手机来不及渲染和绘制，就去掉了嵌套的布局直接：DrawLayout下包含NavigationView和home_content_main，其中home_content_main就是ViewPager和TabLayout。运行程序都显示了。
+-  至于网上说的Fragment嵌套不显示数据和我的不是同一个问题，因为我本来就没有嵌套Fragment，这是另一个问题。

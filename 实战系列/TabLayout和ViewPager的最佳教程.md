@@ -6,7 +6,7 @@
 
 -  [Android Material Design working with Tabs](http://www.androidhive.info/2015/09/android-material-design-working-with-tabs/)
 
--[Android Tabs Example – With Fragments and ViewPager](http://www.truiton.com/2015/06/android-tabs-example-fragments-viewpager/)
+-  [Android Tabs Example – With Fragments and ViewPager](http://www.truiton.com/2015/06/android-tabs-example-fragments-viewpager/)
 
 ---
 
@@ -37,5 +37,5 @@ import android.support.v4.app.Fragment;
 **拓展阅读：**
 
 -  来自简书：[TabLayout+ViewPager 简单实现app底部Tab布局](http://www.jianshu.com/p/adf7a994613a)
--  [Android底部导航总结](http://www.androidchina.net/1263.html):ViewPager会自动家族下一页的Fragment，这篇文章有给解决办法。
+-  [Android底部导航总结](http://www.androidchina.net/1263.html):ViewPager会自动加载下一页的Fragment，这篇文章有给解决办法。
 -  [Android禁止ViewPager的左右滑动](http://blog.csdn.net/allen315410/article/details/40744287)
