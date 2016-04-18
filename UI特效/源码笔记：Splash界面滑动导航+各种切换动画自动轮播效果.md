@@ -10,7 +10,10 @@
   
 
 **效果图：**
+
 ![引导页](https://raw.githubusercontent.com/bingoogolapple/BGABanner-Android/server/screenshots/banner1.gif)
+
+
 ![广告栏动画](https://raw.githubusercontent.com/bingoogolapple/BGABanner-Android/server/screenshots/banner2.gif)
 
 **自定义ViewPager中学到的套路：**
@@ -77,6 +80,31 @@
 
 - [TypedArray语法详解](http://www.cnblogs.com/LiesSu/p/3862319.html):用于管理自定义属性
 
+**在自定义View和经常使用到动态添加控件**
+
+-  所谓动态添加控件就是指在代码中添加，比如广告栏的指示器，因为我们不知道有多少个图片需要显示，所以小点点的指示器的个数是动态的，需要动态添加
+-  在代码中有一个ViewGroup的view容器来实现动态添加View控件，一般使用RelativeLayout和LinearLayout。调用其的addView的方法动态添加view。
+-  有一个类需要重点理解：ViewGroup.LayoutParams，作为addView(View child, ViewGroup.LayoutParams params)需要传递的第二个参数，第一个即为需添加的view可以是一个Button，TextView或者其他任意控件。LayoutParams对象即告诉父布局用于表示该View的布局信息。
+-  在RelativeLayout中还有一个方法需要理解：addRule(),用于表明添加的规则，即该view在父布局中如何布置。
+
+看段代码：*动态添加的代码示例*
+<pre>
+RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+params.addRule(RelativeLayout.ALIGN_PARENT_LEFT, RelativeLayout.TRUE);
+Button button1;
+button1.setLayoutParams(params);
+
+params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+params.addRule(RelativeLayout.RIGHT_OF, button1.getId());
+Button button2;
+button2.setLayoutParams(params);
+</pre>
+
+**展开阅读**
+
+-  [How to set RelativeLayout layout params in code not in xml](http://stackoverflow.com/questions/5191099/how-to-set-relativelayout-layout-params-in-code-not-in-xml)
+-  [Android使用代码实现RelativeLayout，LinearLayout布局](http://blog.csdn.net/luckyjda/article/details/8760214)
+  
 ---
 ####演示demo中：
 **使用Retrofit库获取服务器图片**
