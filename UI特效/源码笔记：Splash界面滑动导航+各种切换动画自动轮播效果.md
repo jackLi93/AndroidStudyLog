@@ -8,6 +8,11 @@
 	-  BGABanner:继承了RelativeLayout的类，是一个完整的自定义View的业务类，封装了BGAViewPager等，实现了广告栏的所有业务
 	-  PageChangeDurationScroller：继承了Scroller，可以传入mDuration，即滑动时间
   
+
+**效果图：**
+![引导页](https://raw.githubusercontent.com/bingoogolapple/BGABanner-Android/server/screenshots/banner1.gif)
+![广告栏动画](https://raw.githubusercontent.com/bingoogolapple/BGABanner-Android/server/screenshots/banner2.gif)
+
 **自定义ViewPager中学到的套路：**
 
 -  继承ViewPager，重写setPageTransformer方法，移除版本限制，通过反射设置参数和方法
