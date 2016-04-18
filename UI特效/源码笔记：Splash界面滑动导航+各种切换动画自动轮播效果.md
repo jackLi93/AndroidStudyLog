@@ -124,6 +124,16 @@ button2.setLayoutParams(params);
 一行代码：
  
 <pre>Glide.with(MainActivity.this).load(bannerModel.imgs.get(i)).placeholder(R.drawable.holder).error(R.drawable.holder).into(imageView);</pre>
+
+---
+
+**使用了JakeWharton的非常著名的库：NineOldAndroids**
+
+-  import com.nineoldandroids.view.ViewHelper;
+-  ViewHelper.setAlpha(mTipTv, positionOffset);
+-  [NineOldAndroids](https://github.com/JakeWharton/NineOldAndroids):所有适用所有Android设备的动画包。但是很遗憾，它的主页上目前显示的状态是：不推荐使用了。
+
+
 **展开阅读：**
 
 -  [Google推荐的图片加载库Glide介绍](http://jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/0327/2650.html)
