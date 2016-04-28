@@ -2,7 +2,7 @@
 
 ---
 
-![内部类](https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwiX1eTs87DMAhWPcI4KHZPwCVwQjRwIBw&url=http%3A%2F%2Fwww.slideshare.net%2Fsoftwaredesigner%2Fsun-java&psig=AFQjCNGFDO86OoqPdnB4uHFVDE-AJu7Glw&ust=1461918170777327)
+![内部类](http://image.slidesharecdn.com/sun-java-120808185718-phpapp02/95/sun-java-74-728.jpg?cb=1344452429)
 
 **什么是内部类？**
 
