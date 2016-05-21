@@ -87,3 +87,21 @@ compile 'com.squareup.retrofit2:retrofit:2.0.0' //注意获取最新版本
 
 -  [Retrofit 2.0: The biggest update yet on the best HTTP Client Library for Android](http://inthecheesefactory.com/blog/retrofit-2.0/en)
 -  [Retrofit](http://www.jianshu.com/p/1ef0ba0bccc6)
+-  [Retrofit 2.0：有史以来最大的改进](http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/0915/3460.html)
+-  [Android Retrofit 2.0使用](http://wuxiaolong.me/2016/01/15/retrofit/)
+-  [Retrofit笔记](http://www.jianshu.com/p/90b1f20b123d)
+-  [Getting started with Retrofit 2](http://zeroturnaround.com/rebellabs/getting-started-with-retrofit-2/)
+-  [使用Retrofit请求API数据－codepath教程](http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/1016/3588.html)
+-  [Retrofit 2.0 Samples](https://www.metachris.com/2015/10/retrofit-2-samples/)
+
+**错误**
+
+-   Could not locate ResponseBody converter for java.util.List<com.sansi.smarthome.model.Bulb>.
+-   需要添加jason数据解析器
+-   [(Retrofit) Could not locate converter for class crashing app](http://stackoverflow.com/questions/32343183/retrofit-could-not-locate-converter-for-class-crashing-app)
+
+---
+
+-  能连接成功但是还是解析失败：java.lang.IllegalStateException: Expected BEGIN_ARRAY but was BEGIN_OBJECT
+-  问题原因：返回的是对象，数组也是一个对象，而期望是List集合，所以应该List改为数组对象。
+-  解决办法：[Caused by: java.lang.IllegalStateException: Expected BEGIN_ARRAY but was BEGIN_OBJECT at line 1 column 2](http://stackoverflow.com/questions/28033303/caused-by-java-lang-illegalstateexception-expected-begin-array-but-was-begin-o)
