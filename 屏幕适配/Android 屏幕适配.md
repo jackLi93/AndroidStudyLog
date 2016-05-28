@@ -28,7 +28,7 @@ MyProject/
         awesomeimage.png
 </pre>
 
-**kills**
+**skills**
 
 -  如果使用 "wrap_content" 和 "match_parent" 尺寸值而不是硬编码的尺寸，您的视图就会相应地仅使用自身所需的空间或展开以填满可用空间。
 
@@ -44,6 +44,6 @@ MyProject/
 -  [Supporting Different Screens](https://developer.android.com/training/basics/supporting-devices/screens.html)
 -  [针对多种屏幕进行设计](https://developer.android.com/training/multiscreen/index.html)
 
-**github **
+**github**
 
 -  [鸿洋的解决方案](https://github.com/hongyangAndroid/AndroidAutoLayout)
