@@ -47,6 +47,57 @@ ft.attach(frg);
 ft.commit();
 </pre>
 
+**异常处理**
+
+在使用方法一的时候得到的返回码为65537：
+
+-  问题原因：
+-  解决办法：Change:
+
+	startActivityForResult(intent, 1);
+
+	To:
+
+	getActivity().startActivityForResult(intent, 1);
+
+-  参考答案：[wrong requestCode in onActivityResult](http://stackoverflow.com/questions/10564474/wrong-requestcode-in-onactivityresult)
+ 
+**最佳解决方案**
+
+-  以上三种方法的实践中总是出现各种问题，虽然思路上是可行的，经过思考我进行了如下的方法特别容易的解决了该问题，而且没有bug。
+-  首先，定义一个Handler，
+<pre>
+    public Handler uiHandler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            //super.handleMessage(msg);
+            if(msg.what==1){
+                updateUI();
+            }
+        }
+    };
+</pre>
+
+-  第二步：定义updateUI()的方法：
+<pre>
+    public  void updateUI(){
+       getDbRooms(getActivity());
+        initView(listRoom);
+        room_bg.setImageResource(listRoom.get(ClickPosition).getImg());
+        //this.onActivityCreated();
+    }
+
+</pre>
+-  第三步：重新Fragment的onResume()的方法：
+<pre>
+    @Override
+    public void onResume() {
+        super.onResume();
+        uiHandler.sendEmptyMessage(1);
+    }
+</pre>
+-  这种方法思路清晰，操作简便，没有什么太大的bug，而且经过我的验证结果可行。
+
 ---
 **展开阅读**
 
